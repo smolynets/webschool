@@ -3,4 +3,17 @@
 {% block content %}
   Hi {{ user.username }}!
   <p><a href="{% url 'logout' %}">logout</a></p>
+  <div class="embed-responsive embed-responsive-16by9">
+
+    {% for video in videos %}
+      <p>{{ video.name }}</p>
+      <iframe class="embed-responsive-item"
+        src="{{ video.video_url }}"
+        allowfullscreen></iframe>
+        </div>
+        <div class="embed-responsive embed-responsive-16by9">
+        <p>{{ video.text }}</p>
+    {% endfor %}
+    
+  </div>
 {% endblock %}

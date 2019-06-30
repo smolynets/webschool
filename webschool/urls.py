@@ -16,10 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic.base import TemplateView
-from cabinet.views import main_view
+from cabinet.views import MainView, VideoDetailView
 
 urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
-    path('', main_view, name='main'),
+    path('', MainView, name='main'),
+    path('<int:pk>/', VideoDetailView, name='video_detail'),
 ]

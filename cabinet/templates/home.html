@@ -10,7 +10,7 @@
         <p class="card-text">{{ video.text }}</p>
         <div class="d-flex justify-content-between align-items-center">
           <div class="btn-group">
-            <a class="btn btn-primary" href="#" role="button">Link</a>
+            <a class="btn btn-primary" href="{% url "video_detail" video.id %}" role="button">Link</a>
           </div>
         </div>
       </div>

@@ -1,19 +1,20 @@
 {% extends 'base.html' %}
-
 {% block content %}
-  Hi {{ user.username }}!
-  <p><a href="{% url 'logout' %}">logout</a></p>
-  <div class="embed-responsive embed-responsive-16by9">
-
-    {% for video in videos %}
-      <p>{{ video.name }}</p>
-      <iframe class="embed-responsive-item"
-        src="{{ video.video_url }}"
+  {% for video in videos %}
+    <div class="col-md-4">
+    <div class="card mb-4 box-shadow">
+      <iframe class="embed-responsive-item" src="{{ video.video_url }}"
         allowfullscreen></iframe>
+      <div class="card-body">
+        <p class="card-text">{{ video.name }}</p>
+        <p class="card-text">{{ video.text }}</p>
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="btn-group">
+            <a class="btn btn-primary" href="#" role="button">Link</a>
+          </div>
         </div>
-        <div class="embed-responsive embed-responsive-16by9">
-        <p>{{ video.text }}</p>
-    {% endfor %}
-    
-  </div>
+      </div>
+    </div>
+    </div>
+  {% endfor %}
 {% endblock %}

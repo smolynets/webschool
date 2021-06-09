@@ -8,7 +8,7 @@ ipdb = "*"
 pylint = "*"
 
 [packages]
-django = "==2.2.2"
+django = "==2.2.22"
 
 [requires]
 python_version = "3.6"
